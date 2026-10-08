@@ -1,0 +1,4 @@
+.env
+.ai-workflow/
+__pycache__/
+*.pyc
