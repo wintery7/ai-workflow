@@ -2,11 +2,14 @@ from fastapi import Depends, FastAPI
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
+from app.api.documents import router as documents_router
 from app.db.database import Base, engine
 from app.db.session import get_db
 from app.models.contract import Contract
 
 app = FastAPI()
+
+app.include_router(documents_router)
 
 Base.metadata.create_all(bind=engine)
 
